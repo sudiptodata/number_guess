@@ -1,0 +1,27 @@
+import random
+def number_guessing_game():
+    print("Welcome to number guessing game")
+    machine_guess = int(random.randint(0,100))
+    
+    user_choice = input("Level 'easy' or 'hard': ")
+    user_choice = user_choice.lower() #making choice lower case
+    
+    #number of attempt
+    number_of_attempt = 0
+    number_of_attempt = int(number_of_attempt)
+    if user_choice == "easy":
+        number_of_attempt += 10
+    else:
+        number_of_attempt += 5
+    
+    while number_of_attempt > 0:
+        user_input = int(input("Enter a number: "))
+        if user_input == machine_guess:
+            print("you won")
+            break
+        elif user_input< machine_guess:
+            print("Number is too low")
+        else:
+            print("Number is too high")
+        number_of_attempt -= 1
+number_guessing_game()
